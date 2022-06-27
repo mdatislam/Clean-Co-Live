@@ -22,6 +22,7 @@ const NavBar = ({children}) => {
             <ul class="menu menu-horizontal gap-x-4 px-4 mx-2">
              {/*  <!-- Navbar menu content here --> */}
               <li> <NavLink  className="rounded-lg" to="/Home">Home</NavLink></li>
+              <li> <NavLink  className="rounded-lg" to="/DashBoard">DashBoard</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/Services">Services</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/About">About</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/Login">Login</NavLink></li>
@@ -63,6 +64,7 @@ const NavBar = ({children}) => {
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
          {/*  <!-- Sidebar content here --> */}
          <li> <NavLink  className="rounded-lg" to="/Home">Home</NavLink></li>
+         <li> <NavLink  className="rounded-lg" to="/DashBoard">DashBoard</NavLink></li>
          <li> <NavLink  className="rounded-lg" to="/Services">Services</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/About">About</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/Login">Login</NavLink></li>

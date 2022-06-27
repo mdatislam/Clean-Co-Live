@@ -53,16 +53,12 @@ const Home = () => {
           <input type="text" placeholder="Type here" class="input input-bordered input-sm  max-w-xs"/>
           <input type="text" placeholder="Type here" class="input input-bordered input-sm  max-w-xs" />
           </div>
-          
-         
-
           <div class="card-actions justify-start mt-2">
             <button class="btn btn-primary">Buy Now</button>
           </div>
         </div>
       </div>
-      <About/>
-      <Services/>
+     
     </>
   );
 };

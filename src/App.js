@@ -9,6 +9,8 @@ import RequireAuth from './Components/ProtectivePage/RequireAuth';
 
 import { privateRoute } from './Route/PrivateRoute';
 import { pablicRoutes } from './Route/PablicRoute';
+import DashBoard from './Components/DashBoard/DashBoard';
+import AdminRoute from './Components/ProtectivePage/AdminRoute';
 
 function App() {
   useEffect(()=>{
@@ -41,6 +43,10 @@ function App() {
       <Route key={index} path={path} element={<Component/>} />)
      }
     </Route>
+    <Route element={<AdminRoute/>}>
+    <Route path="/DashBoard" element={<DashBoard/>}/>
+    </Route>
+    
     </Routes>
     </NavBar>
     </div>
