@@ -44,7 +44,7 @@ function App() {
      }
     </Route>
     <Route element={<AdminRoute/>}>
-    <Route path="/DashBoard" element={<DashBoard/>}/>
+    <Route path="/DashBoard" element={<DashBoard/>}></Route>
     </Route>
     
     </Routes>
