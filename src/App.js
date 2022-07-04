@@ -11,6 +11,9 @@ import { privateRoute } from './Route/PrivateRoute';
 import { pablicRoutes } from './Route/PablicRoute';
 import DashBoard from './Components/DashBoard/DashBoard';
 import AdminRoute from './Components/ProtectivePage/AdminRoute';
+import AddAdmin from './Components/DashBoard/AddAdmin';
+import AddService from './Components/DashBoard/AddService';
+import Profile from './Components/DashBoard/Profile';
 
 function App() {
   useEffect(()=>{
@@ -44,7 +47,11 @@ function App() {
      }
     </Route>
     <Route element={<AdminRoute/>}>
-    <Route path="/DashBoard" element={<DashBoard/>}></Route>
+    <Route path="/DashBoard" element={<DashBoard/>}>
+    <Route index element={<Profile/>}/>
+      <Route path="AddAdmin" element={<AddAdmin/>}/>
+      <Route path="AddService" element={<AddService/>}/>
+    </Route>
     </Route>
     
     </Routes>

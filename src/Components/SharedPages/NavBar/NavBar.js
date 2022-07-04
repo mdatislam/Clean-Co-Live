@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Link, useNavigate,NavLink,useLocation } from "react-router-dom";
 import Services from './../../Services';
 import useAdmin from './../../../Hooks/useAdmin';
+import AddAdmin from './../../DashBoard/AddAdmin';
 
 const NavBar = ({children}) => {
   const [dark,setDark]= useState(false)
-  const pathName = useLocation()
-  console.log(dark)
+  const {pathname }= useLocation()
+  /* console.log(pathname) */
   const [admin]= useAdmin()
     return (
       <div class="drawer drawer-end " data-theme={dark ? 'dark':'light'}>
@@ -14,11 +15,11 @@ const NavBar = ({children}) => {
       <div class="drawer-content flex flex-col">
        {/*  <!-- Navbar --> */}
         <div class="w-full navbar fixed z-40 bg-base-100 lg:px-20 ">
-     {/*    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}{ pathName.includes("dashBoard") && 
-    <label tabindex="0" class="btn btn-ghost btn-circle lg:hidden" for="my-drawer-2">
+     {/*    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}{ pathname.includes("DashBoard") && 
+    (<label tabindex="0" class="btn btn-ghost btn-circle lg:hidden" for="my-drawer-2">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-  </label>
+  </label>)
 }
 
         <div class="flex-1 px-5 mx-2">Clean Co</div>
@@ -32,7 +33,7 @@ const NavBar = ({children}) => {
             <ul class="menu menu-horizontal gap-x-4 px-4 mx-2">
              {/*  <!-- Navbar menu content here --> */}
               <li> <NavLink  className="rounded-lg" to="/Home">Home</NavLink></li>
-              <li> <NavLink  className="rounded-lg" to="/DashBoard">DashBoard</NavLink></li>
+            { admin &&  <li> <NavLink  className="rounded-lg" to="/DashBoard">DashBoard</NavLink></li>}
               <li> <NavLink  className="rounded-lg" to="/Services">Services</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/About">About</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/Login">Login</NavLink></li>
@@ -75,6 +76,7 @@ const NavBar = ({children}) => {
          {/*  <!-- Sidebar content here --> */}
          <li> <NavLink  className="rounded-lg" to="/Home">Home</NavLink></li>
         {/*  <li>    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label></li> */}
+        { admin &&  <li> <NavLink  className="rounded-lg" to="/DashBoard">DashBoard</NavLink></li>}
          <li> <NavLink  className="rounded-lg" to="/Services">Services</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/About">About</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/Login">Login</NavLink></li>
