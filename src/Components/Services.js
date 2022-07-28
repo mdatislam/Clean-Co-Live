@@ -4,18 +4,22 @@ import Service from './Service';
 import fatcher from './../dataApi/Fatcher';
 
 const Services = () => {
-    const [services, setService] = useState([])
+    const [products, setProduct] = useState([])
 
     useEffect(()=>{
-       /*  axios.get("http://localhost:5000/service").then(res=>setService(res.data)) */
+      /*   axios.get("http://localhost:5000/products").then(res=>setProduct(res.data)) */
 
-      /*  (async()=>{
-        const res= await axios.get("http://localhost:5000/service")
-        setService(res.data)
+        // another way
+        
+       (async()=>{
+        const res= await axios.get("http://localhost:5000/products")
+        setProduct(res.data)
 
-       })() */
+       })()
 
-       fatcher.get("/service").then(res=>setService(res.data))
+       //Another way
+
+       /* fatcher.get("/products").then(res=>setProduct(res.data)) */
 
     },[])
     //console.log(services)
@@ -23,7 +27,7 @@ const Services = () => {
         <div className='sm:container sm:mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-5 mt-16'>
           
             {
-            services.map(service => <Service
+            products.map(service => <Service
             index={service.id}
             service={service}></Service>)
             }

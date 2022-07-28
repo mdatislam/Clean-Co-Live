@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate,NavLink,useLocation } from "react-router-dom";
 import Services from './../../Services';
 import useAdmin from './../../../Hooks/useAdmin';
-import AddAdmin from './../../DashBoard/AddAdmin';
+//import AddAdmin from './../../DashBoard/AddAdmin';
 
 const NavBar = ({children}) => {
   const [dark,setDark]= useState(false)
@@ -34,7 +34,7 @@ const NavBar = ({children}) => {
              {/*  <!-- Navbar menu content here --> */}
               <li> <NavLink  className="rounded-lg" to="/Home">Home</NavLink></li>
             { admin &&  <li> <NavLink  className="rounded-lg" to="/DashBoard">DashBoard</NavLink></li>}
-              <li> <NavLink  className="rounded-lg" to="/Services">Services</NavLink></li>
+              <li> <NavLink  className="rounded-lg" to="/Services">Products</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/About">About</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/Login">Login</NavLink></li>
                <li class="dropdown dropdown-hover dropdown-end">
@@ -77,7 +77,7 @@ const NavBar = ({children}) => {
          <li> <NavLink  className="rounded-lg" to="/Home">Home</NavLink></li>
         {/*  <li>    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label></li> */}
         { admin &&  <li> <NavLink  className="rounded-lg" to="/DashBoard">DashBoard</NavLink></li>}
-         <li> <NavLink  className="rounded-lg" to="/Services">Services</NavLink></li>
+         <li> <NavLink  className="rounded-lg" to="/Services">Products</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/About">About</NavLink></li>
               <li> <NavLink  className="rounded-lg" to="/Login">Login</NavLink></li>
 

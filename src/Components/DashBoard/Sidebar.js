@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, useNavigate,NavLink,useLocation } from "react-router-dom";
-import AddAdmin from './AddAdmin';
+//import AddAdmin from './AddAdmin';
 import AddService from './AddService';
+import ServiceList from './ServiceList';
 
 const Sidebar = ({children}) => {
     return (
@@ -16,8 +17,10 @@ const Sidebar = ({children}) => {
           <label for="my-drawer-2" class="drawer-overlay"></label> 
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
            {/*  <!-- Sidebar content here --> */}
-            <li><NavLink to="/DashBoard/AddAdmin">AddAdmin</NavLink></li>
+            <li><NavLink to="/DashBoard/serviceList">ServiceList</NavLink></li>
             <li><NavLink to="/DashBoard/AddService">AddService</NavLink></li>
+            <li><NavLink to="/DashBoard/AddProduct">AddProduct</NavLink></li>
+            
           
           </ul>
         

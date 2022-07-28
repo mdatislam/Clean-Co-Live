@@ -11,9 +11,14 @@ import { privateRoute } from './Route/PrivateRoute';
 import { pablicRoutes } from './Route/PablicRoute';
 import DashBoard from './Components/DashBoard/DashBoard';
 import AdminRoute from './Components/ProtectivePage/AdminRoute';
-import AddAdmin from './Components/DashBoard/AddAdmin';
+// import AddAdmin from './Components/DashBoard/AddAdmin';
 import AddService from './Components/DashBoard/AddService';
 import Profile from './Components/DashBoard/Profile';
+import ServiceList from './Components/DashBoard/ServiceList';
+import AddProduct from './Components/DashBoard/AddProduct';
+import UpdateService from './Components/DashBoard/UpdateService';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   useEffect(()=>{
@@ -49,13 +54,16 @@ function App() {
     <Route element={<AdminRoute/>}>
     <Route path="/DashBoard" element={<DashBoard/>}>
     <Route index element={<Profile/>}/>
-      <Route path="AddAdmin" element={<AddAdmin/>}/>
+      <Route path="serviceList" element={<ServiceList/>}/>
       <Route path="AddService" element={<AddService/>}/>
+      <Route path="AddProduct" element={<AddProduct/>}/>
+      <Route path="updateService" element={<UpdateService/>}/>
     </Route>
     </Route>
     
     </Routes>
     </NavBar>
+    <ToastContainer />
     </div>
   );
 }
