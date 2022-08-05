@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import fatcher from '../../dataApi/Fatcher';
 import cleanGirl from "../../image/bucketgirl.png";
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const [imageUrl, setImageUrl]= useState("")
@@ -16,6 +17,9 @@ const AddProduct = () => {
 
     fatcher.post("/add-products",addProduct).then((res)=>{
         console.log(res)
+        toast.success(' Update successfully done',{
+          position:'top-center'
+        })
     })
     
     setImageUrl("")

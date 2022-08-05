@@ -36,9 +36,15 @@ const Home = () => {
             data-aos-duration="3000"
              class="btn btn-primary">Get Started</button>
           </div>
-          <img src={cleanGirl} h-full alt=" buket girl" />
+          <img 
+          data-aos="flip-right"
+          data-aos-delay="10"
+          data-aos-duration="1000"
+          src={cleanGirl} h-full alt=" buket girl" />
         </div>
       </div>
+
+      
       <div class="bg-base-300 rounded-2xl z-20 mt-[-50px] relative shadow-xl mb-4  w-5/6 mx-auto">
         <div class="card-body">
           <h2 class="card-title">Get Free Estimate!</h2>

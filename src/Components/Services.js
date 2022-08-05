@@ -29,6 +29,8 @@ const Services = () => {
             {
             products.map(service => <Service
             index={service.id}
+            products={products}
+            setProduct={setProduct}
             service={service}></Service>)
             }
         

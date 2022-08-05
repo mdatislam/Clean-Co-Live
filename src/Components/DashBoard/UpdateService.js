@@ -1,9 +1,10 @@
 
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 const UpdateService = ({update,setUpdate,refetch}) => {
-   
+   const [token,setToken]= useState("")
     
     const {_id}=update
     //console.log(_id)
@@ -21,13 +22,19 @@ const UpdateService = ({update,setUpdate,refetch}) => {
         })
         .then(res=>res.json())
         .then(data=>{
-            if(data.status=true){
+            /* if(data.status=true){
               toast.info(" Update done Successfully",{
                 position:'top-center',
                 autoClose: 6000,
 
               })
-            }
+            } */
+           
+            const accessToken = data.token
+            console.log(accessToken)
+            localStorage.setItem('accessToken',accessToken)
+            setToken('accessToken')
+
             
         }) 
         reset()
@@ -71,7 +78,9 @@ const UpdateService = ({update,setUpdate,refetch}) => {
      </form>
   </div>
 </div> 
+
         </div>
+        
     );
 };
 
