@@ -8,7 +8,7 @@ const UpdateService = ({update,setUpdate,refetch}) => {
     
     const {_id}=update
     //console.log(_id)
-    const url = `http://localhost:5000/update/${_id}`
+    const url = `https://enigmatic-shore-65172.herokuapp.com/update/${_id}`
     //console.log(url)
     const { register, handleSubmit, reset} = useForm();
     const onSubmit = async (data) => {
@@ -22,23 +22,24 @@ const UpdateService = ({update,setUpdate,refetch}) => {
         })
         .then(res=>res.json())
         .then(data=>{
-            /* if(data.status=true){
+         
               toast.info(" Update done Successfully",{
                 position:'top-center',
                 autoClose: 6000,
 
               })
-            } */
+             
+              refetch()
            
-            const accessToken = data.token
+           /*  const accessToken = data.token
             console.log(accessToken)
             localStorage.setItem('accessToken',accessToken)
-            setToken('accessToken')
+            setToken('accessToken') */
 
             
         }) 
         reset()
-        refetch()
+       
         setUpdate(null)
     }
 

@@ -38,8 +38,8 @@ const Home = () => {
           </div>
           <img 
           data-aos="flip-right"
-          data-aos-delay="10"
-          data-aos-duration="1000"
+          data-aos-delay="3210"
+          data-aos-duration="8800"
           src={cleanGirl} h-full alt=" buket girl" />
         </div>
       </div>

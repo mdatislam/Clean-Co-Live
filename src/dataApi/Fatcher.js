@@ -1,8 +1,6 @@
 import axios from "axios";
 
-
 const fatcher = axios.create({
-    baseURL: 'http://localhost:5000',
-    
-  });
-  export default fatcher
+  baseURL: "https://enigmatic-shore-65172.herokuapp.com",
+});
+export default fatcher;

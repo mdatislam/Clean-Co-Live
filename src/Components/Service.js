@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import ConfirmDelProduct from './ConfirmDelProduct';
+import useAdmin from './../Hooks/useAdmin';
 
 const Service = ({service,products,setProduct}) => {
+    const [admin]= useAdmin()
     const [delProduct, setDelProduct]= useState("")
     //console.log(delProduct)
     const {Name,Brand,image}= service
@@ -17,7 +19,9 @@ const Service = ({service,products,setProduct}) => {
       <h2 class="text-sm font-bold"> <span className='font-bold text-pink-400 text-base'>Brand</span> : {Brand}</h2>
       </div>
       
-      <label for="delProduct1" class="btn modal-button btn-outline btn-error"  onClick={()=>setDelProduct(service)}>Delete</label>
+      {
+        admin && <label for="delProduct1" class="btn modal-button btn-outline btn-error"  onClick={()=>setDelProduct(service)}>Delete</label>
+      }
      
       </div>
       </div>  
